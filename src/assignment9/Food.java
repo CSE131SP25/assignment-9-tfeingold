@@ -13,14 +13,45 @@ public class Food {
 	 * Creates a new Food at a random location
 	 */
 	public Food() {
-		//FIXME
+		this.x = Math.random();
+		this.y = Math.random();
+		
 	}
 	
+	public void createX() {
+		double boundaryX = Math.random();
+		if (boundaryX > 0.8) {
+			boundaryX = 0.8;
+		}
+		if (boundaryX < 0.2) {
+			boundaryX = 0.2;
+		}
+		
+	}
+	
+	public void createY() {
+		double boundaryY = Math.random();
+		if (boundaryY > 0.8) {
+			boundaryY = 0.8;
+		}
+		if (boundaryY < 0.2) {
+			boundaryY = 0.2;
+		}
+	}
+	
+	public double getX() {
+		return x;
+	}
+	
+	public double getY () {
+		return y; 
+	}
 	/**
 	 * Draws the Food
 	 */
 	public void draw() {
-		//FIXME
+		StdDraw.setPenColor(StdDraw.BOOK_RED);
+		StdDraw.filledCircle(x, y, FOOD_SIZE);
 	}
 	
 }
